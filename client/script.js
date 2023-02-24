@@ -1,7 +1,7 @@
-import bot from "./assets/assets/bot.svg";
-import user from "./assets/assets/user.svg";
+import bot from "./assets/bot.svg";
+import user from "./assets/user.svg";
 
-const from = document.querySelector("form");
+const form = document.querySelector("form");
 const chatContainer = document.querySelector("chat_container");
 
 let loadInterval;
@@ -64,32 +64,8 @@ const handleSubmit = async (e) => {
 
   chatContainer.scrollTop = chatContainer.scrollHeight;
   const messageDiv = document.getElementById(uniqueId);
+  console.log(uniqueId);
   loader(messageDiv);
-
-  const response = await fetch("https://codex-im0y.onrender.com/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      prompt: data.get("prompt"),
-    }),
-  });
-
-  clearInterval(loadInterval);
-  messageDiv.innerHTML = " ";
-
-  if (response.ok) {
-    const data = await response.json();
-    const parsedData = data.bot.trim(); // trims any trailing spaces/'\n'
-
-    typeText(messageDiv, parsedData);
-  } else {
-    const err = await response.text();
-
-    messageDiv.innerHTML = "Something went wrong";
-    alert(err);
-  }
 };
 
 form.addEventListener("submit", handleSubmit);
