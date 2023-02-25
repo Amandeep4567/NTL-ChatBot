@@ -88,6 +88,20 @@ const handleSubmit = async (e) => {
   }
   $("form").on("click", function () {
     df = { dataframe: getFormData($("#dforms")) };
+    console.log(JSON.stringify(df));
+    $.ajax({
+      url: "http://127.0.0.1:8000/send_message",
+      async: true,
+      type: "post",
+      dataType: "json",
+      data: JSON.string(df),
+      sucess: function (result) {
+        console.log(result);
+      },
+      error: function (xhr, resp, text) {
+        console.log(xhr, resp, text);
+      },
+    });
   });
 };
 
