@@ -7,7 +7,7 @@ If a person who is not a part of the NTL wants to know what NTL actually is and 
 So the point is to create our own website
  But people have so many questions regarding how to join NTL, What are the prerequisites for joining NTL, and so on. Instead of answering them manually, We’ve come up with an idea
 
-<b>Our Solution</b?
+<b>Our Solution</b>
 
 Our plan is to build a chatbot for our website which actually answers the queries of anyone not only queries but also guides them in joining the NTL
 It also informs them about the hackathons we’ve participated in and also won
@@ -26,3 +26,5 @@ The chatbot takes questions from the user as its input and then presents the ans
 2. Generic questions - another possibility is that the user can ask questions that is not related to NTL at all and in that case, we have provided the chatbot with an openai key. It will fetch the answer for such questions using the openai.
 
 We have used fast api to host the server. The json text returned as a result is used by the website to provide a semantic chatbot experience
+
+<h2>Presentation Link: </h2>https://docs.google.com/presentation/d/1iJKVHnwS3difQlCUgroCEjqoPsx_5hlL/edit?usp=share_link&ouid=112158627546649158262&rtpof=true&sd=true
